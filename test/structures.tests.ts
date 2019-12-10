@@ -1,8 +1,9 @@
 import { expect } from "chai";
-import { Queue } from "../lib/Queue";
-import { DataStructureFactory } from "../lib/DataStructureFactory";
-import { DataStructure } from "../lib/DataStructureEnum";
-import { Stack } from "../lib/Stack";
+import { Queue } from "../src/lib/Queue";
+import { DataStructureFactory } from "../src/lib/DataStructureFactory";
+import { DataStructure } from "../src/lib/DataStructureEnum";
+import { Stack } from "../src/lib/Stack";
+import * as mocha from "mocha";
 
 describe("Data structures", () => {
     describe("Queue", () => {

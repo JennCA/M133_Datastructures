@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Datastructures - M133</title>
+
+	<style>
+		* {
+			font-family: Arial, sans-serif;
+			font-size: 20px;
+		}
+
+		#header {
+			margin: 20px 10px;
+		}
+
+		#messages {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		#messages p {
+			margin: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<select id="choice"></select>
+		<input id="value" type="text" placeholder="Value to add ..." required>
+		<input id="btnAdd" type="button" value="Add">
+		<input id="btnPoll" type="button" value="Poll">
+		<input id="btnPeek" type="button" value="Peek">
+		<input id="btnReset" type="button" value="Reset" title="Reset messages">
+	</div>
+
+	<div class="messages-container">
+			<div id="messages"></div>
+	</div>
+
+	<script src="./script.ts"></script>
+</body>
+</html>

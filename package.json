@@ -11,13 +11,22 @@
     },
     "author": "Domenic Helfenstein",
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {
+        "@types/express": "^4.17.2",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "rimraf": "^3.0.0"
+    },
     "devDependencies": {
         "@types/chai": "4.2.5",
+        "@types/ejs": "^2.7.0",
         "@types/mocha": "5.2.7",
+        "@types/parcel-bundler": "^1.12.1",
         "chai": "4.2.0",
-        "mocha": "6.2.0",
+        "copyfiles": "^2.1.1",
+        "mocha": "^6.2.2",
+        "parcel-bundler": "^1.12.4",
         "ts-node": "8.5.2",
-        "typescript": "3.7.2"
+        "typescript": "^3.7.3"
     }
 }

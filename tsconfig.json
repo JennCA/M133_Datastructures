@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"outDir": "./dist",
+		"noImplicitAny": false,
+		"strict": true,
+		"esModuleInterop": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"strictNullChecks": false,
+		"typeRoots": [
+			"../node_modules/@types"
+		],
+		"baseUrl": "./src",
+		"paths": {
+			"~*": ["./*"]
+		}
+	},
+	"exclude": [
+		"node_modules/",
+		"test",
+		"dist/**/*"
+	],
+	"include": [
+		"src/lib",
+		"./app.ts",
+		"src/web"
+	]
+}
