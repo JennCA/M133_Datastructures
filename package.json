@@ -3,7 +3,11 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "test": "mocha"
+        "prestart": "npm run cleandist && copyfiles *.html dist",
+        "start": "tsc && node ./dist/app",
+        "dev": "ts-node app.ts",
+        "cleandist": "rimraf ./dist",
+        "test": "mocha -r ts-node/register test/**/*.tests.ts"
     },
     "author": "Domenic Helfenstein",
     "license": "MIT",
