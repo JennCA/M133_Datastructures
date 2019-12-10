@@ -1,5 +1,8 @@
 import { expect } from "chai";
 import { Queue } from "../lib/Queue";
+import { DataStructureFactory } from "../lib/DataStructureFactory";
+import { DataStructure } from "../lib/DataStructureEnum";
+import { Stack } from "../lib/Stack";
 
 describe("Data structures", () => {
     describe("Queue", () => {
@@ -130,4 +133,67 @@ describe("Data structures", () => {
             expect(result).to.not.equal(expected);
         });
     });
+
+    describe('Stack', () => {
+        var stack: Stack;
+
+        beforeEach(() => {
+            stack = new Stack();
+        });
+
+        it('can poll artist from stack with 4 artists', () => {
+            const artists = ["Hans", "Darude", "Jackson Wang", "G-Dragon"];
+            const expected = 'G-Dragon';
+
+            artists.forEach(artist => stack.add(artist));
+            const result = stack.poll();
+
+            expect(result).to.equal(expected);
+        });
+
+        it('can poll from empty stack', () => {
+            const expected = undefined;
+
+            const result = stack.poll();
+
+            expect(result).to.equal(expected);
+        });
+
+        it('can poll artists in correct order', () => {
+            const artists = ["Hans", "Darude", "Jackson Wang", "G-Dragon"];
+
+            artists.forEach(artist => stack.add(artist));
+            artists.reverse();
+            var result = [];
+
+            while (!stack.isEmpty())
+                result.push(stack.poll());
+
+            expect(result).to.deep.equal(artists);
+        });
+    });
+
+    describe("Factory", () => {
+        var dataStructureFactory: DataStructureFactory;
+
+        beforeEach(() => {
+            dataStructureFactory = new DataStructureFactory();
+        });
+
+        it("can create Queue", () => {
+            const structureType = DataStructure.FIFO; //queue
+
+            const result = dataStructureFactory.create(structureType);
+
+            expect(result).to.be.an.instanceOf(Queue);
+        });
+
+        it('can create Stack', () => {
+            const dataStructureStack = DataStructure.LIFO; //stack
+
+            const result = dataStructureFactory.create(dataStructureStack);
+
+            expect(result).to.be.an.instanceOf(Stack);
+        });
+    })
 })
